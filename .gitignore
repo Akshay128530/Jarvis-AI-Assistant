@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+*.pyc
+voice.mp3
+.env
