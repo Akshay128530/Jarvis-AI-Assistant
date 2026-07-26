@@ -156,7 +156,14 @@ def processCommand(c):
 
     elif "weather" in c.lower():
         print("Fetching weather...")
-        get_weather("Ghaziabad")
+
+        match = re.search(r"weather\s+in\s+(.+)", c, re.IGNORECASE)
+
+        if match:
+          city = match.group(1).strip()
+          get_weather(city)
+        else:
+         get_weather("Ghaziabad")
 
     elif "news" in c.lower():
         print("Fetching news...")
