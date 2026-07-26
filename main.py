@@ -7,6 +7,7 @@ import pygame
 import os
 import time
 import requests  # The requests library is used to make HTTP requests to the API to fetch data
+import re
 
 r = sr.Recognizer()
 newsapi = "1c209ea3d2c34d338ac6a5690e8aab4d"  # This is the API key for the NewsAPI service. You can get your own API key by signing up at https://newsapi.org/
@@ -152,6 +153,11 @@ def processCommand(c):
         print("Matched twitter command")
         speak("Opening Twitter")
         webbrowser.open("https://twitter.com/")
+
+    elif "weather" in c.lower():
+        print("Fetching weather...")
+        get_weather("Ghaziabad")
+
     elif "news" in c.lower():
         print("Fetching news...")
         url = f"https://newsapi.org/v2/everything?q=India&language=en&sortBy=publishedAt&apiKey={newsapi}"  # This URL is constructed to fetch news articles related to India in English, sorted by the most recent publication date. The API key is included in the URL for authentication.
