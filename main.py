@@ -8,6 +8,7 @@ import os
 import time
 import requests  # The requests library is used to make HTTP requests to the API to fetch data
 import re
+import json
 
 r = sr.Recognizer()
 newsapi = "1c209ea3d2c34d338ac6a5690e8aab4d"  # This is the API key for the NewsAPI service. You can get your own API key by signing up at https://newsapi.org/
