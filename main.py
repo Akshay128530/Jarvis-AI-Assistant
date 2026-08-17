@@ -14,8 +14,8 @@ from google import genai
 r = sr.Recognizer()
 newsapi = "1c209ea3d2c34d338ac6a5690e8aab4d"  # This is the API key for the NewsAPI service. You can get your own API key by signing up at https://newsapi.org/
 
-gemini_api_key = os.getenv("GEMINI_API_KEY ")
-
+gemini_api_key = os.getenv("GEMINI_API_KEY")
+print("Gemini key found:", bool(gemini_api_key))
 if gemini_api_key:
     client = genai.Client(api_key=gemini_api_key)
 else:
@@ -139,7 +139,7 @@ def ask_gemini(question):
     try:
 
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.6-flash",
             contents=(
                 "You are JARVIS, a helpful voice assistant. "
                 "Answer clearly and briefly because your answer "
