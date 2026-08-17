@@ -14,7 +14,7 @@ from google import genai
 r = sr.Recognizer()
 newsapi = "1c209ea3d2c34d338ac6a5690e8aab4d"  # This is the API key for the NewsAPI service. You can get your own API key by signing up at https://newsapi.org/
 
-gemini_api_key = os.getenv(" ")
+gemini_api_key = os.getenv("GEMINI_API_KEY ")
 
 if gemini_api_key:
     client = genai.Client(api_key=gemini_api_key)
@@ -228,6 +228,10 @@ def processCommand(c):
         else:
          speak("Sorry, I couldn't fetch the news.")
 
+    else:
+        print("No built-in command matched. Asking Gemini...")
+        ask_gemini(c)
+       
 if __name__ == "__main__":
     speak("Initializing Jarvis....")
     time.sleep(1)
