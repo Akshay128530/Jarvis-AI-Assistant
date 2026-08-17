@@ -12,7 +12,7 @@ import json
 from google import genai
 
 r = sr.Recognizer()
-newsapi = "1c209ea3d2c34d338ac6a5690e8aab4d"  # This is the API key for the NewsAPI service. You can get your own API key by signing up at https://newsapi.org/
+newsapi = "NEWS_API_KEY"  # This is the API key for the NewsAPI service. You can get your own API key by signing up at https://newsapi.org/
 
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 print("Gemini key found:", bool(gemini_api_key))
